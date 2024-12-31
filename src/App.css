@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+/* General */
+body {
+  background-color: #f5f5f5;
+  margin: 0; /* Asegura que no haya margenes globales que afecten el centrado */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: #f5f5f5;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;  /* Aseguramos que la tarjeta no se expanda más allá de este tamaño */
+  width: 100%;
+  margin: 1rem auto; /* Esto asegura que la tarjeta se centre */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Imagen */
+.image-container {
+  flex: 1;
+  background-color: #f5f5f5;
+}
+
+.image-container img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* Información del paciente */
+.patient-info {
+  flex: 2;
+  padding: 1.5rem;
+}
+
+.patient-info p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: #6e6e6e;
+}
+
+.patient-info strong {
+  color: #333;
+  font-weight: bold;
+}
+
+.button-container {
+  margin-top: 5rem; /* Ajusta este valor según el espacio que necesites */
+}
+
+.title {
+  margin-bottom: 1.5rem; /* Espacio entre el título y el contenido */
+  padding-bottom: 0.5rem; /* Espacio extra para la línea */
+  border-bottom: 2px solid #acb3bc; /* Línea azul debajo del título */
+}
+
+.subtitle {
+  margin-bottom: 1rem;
+}
+
+/* Responsivo para tablets y móviles */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Imagen arriba y info abajo */
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .image-container {
+    height: 200px; /* Imagen más pequeña en móvil */
+  }
+
+  .patient-info {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    flex-direction: column; /* Imagen arriba, info abajo */
+    width: 100%;
+  }
+
+  .image-container {
+    height: 180px; /* Imagen más pequeña en móvil */
+  }
+
+  .patient-info {
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  .patient-info p {
+    margin-bottom: 0.5rem;
   }
 }

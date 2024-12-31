@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import PatientCard from './components/PatientCard';
 import './App.css';
 
 function App() {
+  const handleDetailsClick = () => {
+    alert('Mostrando más detalles del paciente.');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <PatientCard
+        name="Juan Pérez"
+        age={45}
+        diagnosis="Hipertensión"
+        onDetailsClick={handleDetailsClick}
+      />
     </div>
   );
 }
 
 export default App;
+
